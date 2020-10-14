@@ -1,0 +1,86 @@
+<%- include ('partials/_header')  %>
+
+    <h1 class="text-center lead display-4 text-info">CRUD</h1>
+
+    <div class="container mt-5">
+
+        <div class="row">
+
+            <div class="col-md-9">
+
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Minimo</th>
+                        <th>Maximo</th>
+                        <th>Cantidad</th>
+                        <th>Opciones</th>
+                    </thead>
+
+                    <tbody>
+                        <% if (data) { %>
+                            <% for (var i = 0; i < data.length; i++) { %>
+                                <tr>
+                                    <td>
+                                        <%= data[i].id %>
+                                    </td>
+                                    <td>
+
+                                        <%= data[i].nombre %>
+                                    </td>
+                                    <td>
+                                        $
+                                        <%= data[i].precio %>
+                                    </td>
+                                    <td>
+                                        <%= data[i].topeMinimo %>
+                                    </td>
+                                    <td>
+                                        <%= data[i].topeMaximo %>
+                                    </td>
+                                    <td>
+                                        <%= data[i].cantidad %>
+                                    </td>
+                                    <td>
+                                        <a href="/delete/<%= data[i].id %>" class="btn btn-danger btn-block btn-sm">Borrar</a>
+                                        <a href="/update/<%= data[i].id %>" class="btn btn-warning btn-block btn-sm">Editar</a>
+                                    </td>
+                                </tr>
+                                <% } %>
+                                    <% } %>
+                    </tbody>
+                </table>
+
+            </div>
+
+            <div class="col-md-3">
+                <form action="/add" method="POST">
+
+                    <div class="form-group">
+                        <input type="text" name="nombre" placeholder="Nombre" class="form-control" value="<%= data.nombre %>">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="precio" placeholder="Precio" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="topeMinimo" placeholder="Minimo" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="topeMaximo" placeholder="Maximo" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="cantidad" placeholder="Cantidad" class="form-control">
+                    </div>
+
+                    <button class="btn badge-success btn-block" type="submit">Guardar Producto</button>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <%- include ('partials/_footer')  %>
