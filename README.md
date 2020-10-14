@@ -1,0 +1,3 @@
+## CRUD DE ARTICULOS EN NODEJS Y MYSQL
+
+Buen dia le dejo el trabajo que pude lograr hacer, solo el crud de los productos, no pude avanzar más ya que en lo que refiere a nodejs y backend se muy poco, estoy un poco mas orientado al frontend, claro que lo que hice fue en base información que encontre pues estoy un poco relacionado aun con estas tecnologias. En verdad fue un reto para mi tener que realizar lo que poco que hice, pero me ha dado un mejor idea de en que debo de concentrarme más para poder crecer de manera profesional :)
